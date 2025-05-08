@@ -13,6 +13,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend running...");
+});
+
+
 app.use('/api/news', articleRoutes);
 app.get('/api/health', (_, res) => res.json({ status: 'healthy' }));
 
